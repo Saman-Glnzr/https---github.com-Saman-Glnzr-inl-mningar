@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Sektion för info om dig själv
+    // Sektion för personlig info
     const info = document.createElement("section");
     info.id = "about-me"; // så CSS från landing.css funkar
     info.innerHTML = `
