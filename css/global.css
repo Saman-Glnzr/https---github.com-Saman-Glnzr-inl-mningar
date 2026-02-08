@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}/* Header */
+/* =============================== */
+
+header {
+    background-color: #333;   /* Mörk bakgrund */
+    color: white;             /* Vit text */
+    padding: 15px;            /* Luft runt innehållet */
+}
+
+/* Rubrik i header */
+header h1 {
+    margin: 0 0 10px 0;       /* Avstånd under rubriken */
+}
+
+/* =============================== */
+/* Navigation */
+/* =============================== */
+
+nav ul {
+    list-style: none;        /* Tar bort listpunkter */
+    padding: 0;              /* Tar bort standard-padding */
+    margin: 0;               /* Tar bort standard-margin */
+    display: flex;           /* Gör länkarna horisontella */
+    gap: 10px;               /* Mellanrum mellan länkar */
+}
+
+/* Alla länkar i navigationen */
+nav a {
+    color: black;              /* svart text */
+    text-decoration: none;
+    background-color: #f1f1f1; /* ljusgrå bakgrund */
+    padding: 5px 10px;
+}
+
+/* Endast aktiv länk */
+nav a.active {
+    background-color: #e40d0d; /* röd bakgrund */
+    color: white;              /* vit text för kontrast */
+}
+
+
+/* =============================== */
+/* Main */
+/* =============================== */
+
+main {
+    padding: 20px;           /* Luft runt innehållet */
+}
+
+/* =============================== */
+/* Sektioner */
+/* =============================== */
+
+section {
+    margin-bottom: 20px;     /* Avstånd mellan sektioner */
+}
+
+/* =============================== */
+/* Länkar */
+/* =============================== */
+
+a {
+    color: blue;             /* Standard blå länk */
+}
+
+/* =============================== */
+/* Footer */
+/* =============================== */
+
+footer {
+    text-align: center;      /* Centrerar texten */
+    padding: 15px;           /* Luft runt texten */
+    background-color: #ddd;  /* Ljusgrå bakgrund */
+    margin-top: 30px;        /* Avstånd uppåt */
+}
