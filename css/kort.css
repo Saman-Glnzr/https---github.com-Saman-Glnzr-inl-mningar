@@ -1,0 +1,58 @@
+/* ---------------------------
+   LANDNINGSSIDA
+--------------------------- */
+
+/* Huvudcontainer */
+main#content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Kort för varje uppgift */
+.assignment-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Korttitel */
+.assignment-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Kortbeskrivning */
+.assignment-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Länk-knapp på korten */
+.assignment-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover-effekt för länkar */
+.assignment-card a:hover {
+    background-color: #005fa3;
+}
+
+/* Info om dig själv */
+#about-me {
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.95rem;
+    color: #444;
+}

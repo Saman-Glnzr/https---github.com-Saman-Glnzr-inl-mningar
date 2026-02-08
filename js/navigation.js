@@ -25,7 +25,7 @@ function generateNavigation(containerId) {
 });
 
 
-    header.innerHTML = "<h1>Webbutveckling – Inlämningar</h1>";
+    header.innerHTML = "<h1>Webbutveckling 3 – 1ME323</h1>";
 
     header.appendChild(nav);
     nav.appendChild(ul);

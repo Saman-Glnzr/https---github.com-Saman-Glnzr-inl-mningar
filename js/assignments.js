@@ -1,15 +1,15 @@
 const assignments = [
     {
-        id: "home",
-        title: "Start",
-        link: "index.html",
-
-        description: "Startsida för alla inlämningsuppgifter."
-    },
-    {
         id: "assignment1",
         title: "Uppgift 1",
         link: "assignment1/index.html",
-        description: "Samlingssida för inlämningar, navigation och GitHub Pages."
+        description: "Skapa landningssidan för kursen."
+    },
+    {
+        id: "assignment2",
+        title: "Uppgift 2",
+        link: "assignment2/index.html",
+        description: "Nästa uppgift,."
     }
 ];
+
