@@ -6,78 +6,52 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
-}/* Header */
-/* =============================== */
-
+}
 header {
-    background-color: #333;   /* Mörk bakgrund */
-    color: white;             /* Vit text */
-    padding: 15px;            /* Luft runt innehållet */
+    background-color: #333;
+    color: white;
+    padding: 15px;
 }
 
-/* Rubrik i header */
 header h1 {
-    margin: 0 0 10px 0;       /* Avstånd under rubriken */
+    margin: 0 0 10px 0;
 }
-
-/* =============================== */
-/* Navigation */
-/* =============================== */
 
 nav ul {
-    list-style: none;        /* Tar bort listpunkter */
-    padding: 0;              /* Tar bort standard-padding */
-    margin: 0;               /* Tar bort standard-margin */
-    display: flex;           /* Gör länkarna horisontella */
-    gap: 10px;               /* Mellanrum mellan länkar */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
 }
 
-/* Alla länkar i navigationen */
 nav a {
-    color: black;              /* svart text */
+    color: black;
     text-decoration: none;
-    background-color: #f1f1f1; /* ljusgrå bakgrund */
+    background-color: #f1f1f1;
     padding: 5px 10px;
 }
 
-/* Endast aktiv länk */
 nav a.active {
-    background-color: #e40d0d; /* röd bakgrund */
-    color: white;              /* vit text för kontrast */
+    background-color: #e40d0d;
+    color: white;
 }
-
-
-/* =============================== */
-/* Main */
-/* =============================== */
 
 main {
-    padding: 20px;           /* Luft runt innehållet */
+    padding: 20px;
 }
-
-/* =============================== */
-/* Sektioner */
-/* =============================== */
 
 section {
-    margin-bottom: 20px;     /* Avstånd mellan sektioner */
+    margin-bottom: 20px;
 }
-
-/* =============================== */
-/* Länkar */
-/* =============================== */
 
 a {
-    color: blue;             /* Standard blå länk */
+    color: blue;
 }
 
-/* =============================== */
-/* Footer */
-/* =============================== */
-
 footer {
-    text-align: center;      /* Centrerar texten */
-    padding: 15px;           /* Luft runt texten */
-    background-color: #ddd;  /* Ljusgrå bakgrund */
-    margin-top: 30px;        /* Avstånd uppåt */
+    text-align: center;
+    padding: 15px;
+    background-color: #ddd;
+    margin-top: 30px;
 }

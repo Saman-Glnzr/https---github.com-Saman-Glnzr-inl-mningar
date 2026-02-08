@@ -4,7 +4,6 @@ const assignments = [
         title: "Start",
         link: "index.html",
 
-        // beskrivning som visas på startsidan
         description: "Startsida för alla inlämningsuppgifter."
     },
     {
