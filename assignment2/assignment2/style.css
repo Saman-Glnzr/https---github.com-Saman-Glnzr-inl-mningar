@@ -1,0 +1,268 @@
+/* Bygger vidare på uppgift 1: global.css står för bas-typografi, färger, etc.
+   Här gör vi layout + kort + kundvagn i samma “familj” visuellt. */
+
+:root {
+  --card-radius: 14px;
+  --card-border: rgba(0,0,0,0.08);
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --muted: rgba(0,0,0,0.6);
+}
+
+body {
+  /* Låt global.css styra bas, vi håller oss lugna här */
+}
+
+.site-header .header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 0.5rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+}
+
+.page-subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.products-toolbar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transform: translateY(0);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: rgba(0,0,0,0.14);
+}
+
+.product-media {
+  aspect-ratio: 4 / 3;
+  background: rgba(0,0,0,0.03);
+  overflow: hidden;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-body {
+  padding: 0.85rem 0.9rem 1rem;
+}
+
+.product-top {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.product-top h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.desc {
+  margin: 0.45rem 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.03);
+}
+
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 140ms ease, transform 140ms ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.add-to-cart {
+  background: #111;
+  color: #fff;
+}
+
+.add-to-cart:hover {
+  filter: brightness(1.05);
+}
+
+/* Kundvagn */
+.cart {
+  position: sticky;
+  top: 1rem;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.cart-header {
+  padding: 0.9rem 0.9rem 0.7rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cart-subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cart-body {
+  padding: 0.9rem;
+}
+
+.cart-empty p {
+  margin: 0.25rem 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* visas av JS när det finns varor */
+  gap: 0.6rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.02);
+}
+
+.cart-item .left {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.cart-item .name {
+  font-weight: 700;
+}
+
+.cart-item .qty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cart-item .right {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cart-footer {
+  padding: 0.9rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.btn-danger {
+  background: rgba(200,0,0,0.12);
+  color: #7a0000;
+  border: 1px solid rgba(200,0,0,0.22);
+}
+
+.btn-danger:hover {
+  filter: brightness(0.98);
+}
+
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
