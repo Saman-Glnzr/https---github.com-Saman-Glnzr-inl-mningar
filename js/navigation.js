@@ -14,11 +14,12 @@ function generateNavigation(containerId) {
     a.href = item.link;
     a.textContent = item.title;
 
-    const currentPage = window.location.pathname.split("/").pop();
-    const itemPage = item.link.split("/").pop();
+const currentPath = window.location.pathname;
 
-    if (itemPage === currentPage) {
-    }
+if (currentPath.endsWith(item.link)) {
+  a.classList.add("active");
+}
+
 
     li.appendChild(a);
     ul.appendChild(li);
