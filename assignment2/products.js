@@ -1,4 +1,3 @@
-import { generateNavigation } from "../js/navigation.js"
 
 console.log("products.js laddad ✅");
 

@@ -1,5 +1,5 @@
-/* Bygger vidare på uppgift 1: global.css står för bas-typografi, färger, etc.
-   Här gör vi layout + kort + kundvagn i samma “familj” visuellt. */
+/* 
+   Här görs  layout + kort + kundvagn i samma “familj” visuellt. */
 
 :root {
   --card-radius: 14px;
@@ -9,7 +9,6 @@
 }
 
 body {
-  /* Låt global.css styra bas, vi håller oss lugna här */
 }
 
 .site-header .header-inner {

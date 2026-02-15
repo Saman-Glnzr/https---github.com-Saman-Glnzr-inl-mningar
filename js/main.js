@@ -3,6 +3,12 @@ import { generateNavigation } from "./navigation.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
+      const header = document.getElementById("site-header");
+
+  header.innerHTML = `
+    <h1>Webbprogrammering</h1>
+  `;
+  
     // Generera navigation
     generateNavigation("site-header");
 

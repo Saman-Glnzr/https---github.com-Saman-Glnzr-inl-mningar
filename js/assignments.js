@@ -1,5 +1,11 @@
 export const assignments = [
   {
+    id: "home",
+    title: "Home",
+    link: "index.html",
+    description: "Landningssidan"
+  },
+  {
     id: "assignment1",
     title: "Uppgift 1",
     link: "assignment1/index.html",
