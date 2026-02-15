@@ -1,3 +1,6 @@
+import { assignments } from "./assignments.js";
+import { generateNavigation } from "./navigation.js";
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // Generera navigation

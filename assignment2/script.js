@@ -1,3 +1,6 @@
+
+import { products } from "./products.js";
+import { generateNavigation } from "../js/navigation.js";
 console.log("script.js laddad ✅");
 
 const productGridEl = document.getElementById("productGrid");

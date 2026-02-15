@@ -1,33 +1,27 @@
-function generateNavigation(containerId) {
+import { assignments } from "./assignments.js";
 
-    const header = document.getElementById(containerId);
+export function generateNavigation(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-    const nav = document.createElement("nav");
-    const ul = document.createElement("ul");
+  let currentAssignment = document.body.id
 
-    const currentPage = window.location.pathname.split("/").pop();
+  const nav = document.createElement("nav");
+  const ul = document.createElement("ul");
 
-    assignments.forEach(function(item) {
+  assignments.forEach(a => { 
     const li = document.createElement("li");
-    const a = document.createElement("a");
+    const link = document.createElement("a");
 
-    a.href = item.link;
-    a.textContent = item.title;
-
-const currentPath = window.location.pathname;
-
-if (currentPath.endsWith(item.link)) {
-  a.classList.add("active");
-}
-
-
-    li.appendChild(a);
+    link.href = a.link;
+    link.textContent = a.title;
+    li.appendChild(link);
     ul.appendChild(li);
-});
+            if (currentAssignment === assignments.id){link.classList.add('active')
 
+    }
+  });
 
-    header.innerHTML = "<h1>Webbutveckling 3 – 1ME323</h1>";
-
-    header.appendChild(nav);
-    nav.appendChild(ul);
+  nav.appendChild(ul);
+  container.appendChild(nav);
 }

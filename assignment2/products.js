@@ -1,6 +1,8 @@
+import { generateNavigation } from "../js/navigation.js"
+
 console.log("products.js laddad ✅");
 
-const products = [
+export const products = [
   { id:"p1", name:"NovaBeat X1", description:"Trådlösa over-ear.", price:1299, image:"./images/product_1.jpg", category:["Hörlurar","Trådlöst"] },
   { id:"p2", name:"AuroraBook 14", description:"Tunn laptop.", price:9990, image:"./images/product_2.jpg", category:["Laptop","Studie"] },
   { id:"p3", name:"StudioCable S2", description:"Kabelhörlurar.", price:699, image:"./images/product_3.jpg", category:["Hörlurar","Kabel"] },
@@ -10,3 +12,5 @@ const products = [
   { id:"p7", name:"Heritage Pro", description:"Premium over-ear.", price:1799, image:"./images/product_7.jpg", category:["Hörlurar","Over-ear"] },
   { id:"p8", name:"Vortex Gaming 16", description:"Gaminglaptop.", price:15990, image:"./images/product_8.jpg", category:["Laptop","Gaming"] }
 ];
+
+
