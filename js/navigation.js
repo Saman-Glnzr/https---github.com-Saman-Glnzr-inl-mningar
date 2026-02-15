@@ -4,22 +4,27 @@ export function generateNavigation(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  let currentAssignment = document.body.id
+  const inSubfolder = window.location.pathname.includes("/assignment");
+  const base = inSubfolder ? "../" : "./";
+
+  const currentPath = window.location.pathname.split("/").slice(-2).join("/");
 
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
 
-  assignments.forEach(a => { 
+  assignments.forEach((item) => {
     const li = document.createElement("li");
-    const link = document.createElement("a");
+    const a = document.createElement("a");
 
-    link.href = a.link;
-    link.textContent = a.title;
-    li.appendChild(link);
-    ul.appendChild(li);
-            if (currentAssignment === assignments.id){link.classList.add('active')
+    a.textContent = item.title;
+    a.href = base + item.link;
 
+    if (currentPath === item.link) {
+      a.classList.add("active");
     }
+
+    li.appendChild(a);
+    ul.appendChild(li);
   });
 
   nav.appendChild(ul);
