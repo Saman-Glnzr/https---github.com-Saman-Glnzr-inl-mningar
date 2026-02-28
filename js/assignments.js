@@ -16,5 +16,13 @@ export const assignments = [
     title: "Uppgift 2",
     link: "assignment2/index.html",
     description: "Nästa uppgift."
+  },
+   {
+    id: "assignment3",
+    title: "Uppgift 3",
+    link: "assignment3/index.html",
+    description: "turnering"
   }
+
+
 ];
