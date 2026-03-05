@@ -1,0 +1,16 @@
+.wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px; font-family: system-ui; }
+.bar { display: flex; gap: 8px; margin: 12px 0 20px; }
+button { padding: 10px 12px; cursor: pointer; }
+
+.round { margin: 18px 0; padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
+.round h2 { margin: 0 0 10px; font-size: 18px; }
+
+.matches { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.match { border: 1px solid #ddd; border-radius: 10px; padding: 10px; }
+.row { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 8px; }
+.small { font-size: 12px; opacity: .8; }
+
+.winner { font-weight: 700; outline: 2px solid #111; }
+.loser { opacity: .45; }
+.playedTag { font-size: 12px; opacity: .8; margin-top: 6px; }
+.champ { margin-top: 12px; padding: 10px; border-radius: 10px; border: 2px solid #111; }
