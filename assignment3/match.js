@@ -1,103 +1,88 @@
-// [Punkt 0]: Filen exporterar Match-klassen så att main.js kan använda den.
 export class Match {
-  // [Punkt 2.1]: Privata fält (#).
-  // Dessa kan inte ändras utifrån, vilket skyddar matchens tillstånd.
-  #player1;
-  #player2;
-  #winner = null;
-  #isPlayed = false;
-  #element = null; // Sparar HTML-elementet för att kunna ändra det när matchen spelas.
+  #spelare1; // Privat variabel för första roboten
+  #spelare2; // Privat variabel för andra roboten
+  #vinnare = null; // Startar som tom (null)
+  #ärSpelad = false; // Startar som falskt (inte spelad än)
+  #element = null; // Här sparar vi HTML-boxen senare
 
-  // [Punkt 2.1]: Konstruktorn tar emot de två deltagar-objekten från  JSON.
   constructor(p1, p2) {
-    this.#player1 = p1;
-    this.#player2 = p2;
+    this.#spelare1 = p1; // Sparar robot 1 i matchen
+    this.#spelare2 = p2; // Sparar robot 2 i matchen
   }
 
-  // [Punkt 2.1]: Getters för att main.js ska kunna läsa vem som vann eller om det är spelat.
+  // "Getters" låter main.js titta på värdena utan att ändra dem
   get player1() {
-    return this.#player1;
+    return this.#spelare1;
   }
   get player2() {
-    return this.#player2;
+    return this.#spelare2;
   }
   get winner() {
-    return this.#winner;
+    return this.#vinnare;
   }
   get isPlayed() {
-    return this.#isPlayed;
+    return this.#ärSpelad;
   }
 
-  // [Punkt 2.1]: Metod som skapar själva HTML-boxen för matchen.
   render() {
-    const container = document.createElement("div");
-    container.className = "match-card";
+    const låda = document.createElement("div"); // Skapar en ny <div>
+    låda.className = "match-card"; // Ger den ett namn för CSS
 
-    // [Punkt 2.2]: Här hanterar vi din JSON-data.
-    // Vi använder ?? (nullish coalescing) för att sätta standardvärden.
-    // Exempel: Mystiska Molnet har null som catchphrase, då visas "..." istället.
-    const p1Name = this.#player1.name ?? "Okänd";
-    const p1Skill = this.#player1.skillLevel ?? 4; // Om skillLevel saknas sätter vi 4.
-    const p1Phrase = this.#player1.catchphrase ?? "...";
+    // Om namn eller catchphrase saknas, använd standard-text (??)
+    const namn1 = this.#spelare1.name ?? "Okänd";
+    const prat1 = this.#spelare1.catchphrase ?? "...";
+    const namn2 = this.#spelare2.name ?? "Okänd";
+    const prat2 = this.#spelare2.catchphrase ?? "...";
 
-    const p2Name = this.#player2.name ?? "Okänd";
-    const p2Skill = this.#player2.skillLevel ?? 4;
-    const p2Phrase = this.#player2.catchphrase ?? "...";
-
-    // [Punkt 2.2]: Skapar det visuella .
-    // Vi struntar i bilderna nu och fokuserar på namn, styrka och catchphrase.
-    container.innerHTML = `
-            <div class="player p1">
-                <h4>${p1Name}</h4>
-                <p>Skill: ${p1Skill}</p>
-                <small>"${p1Phrase}"</small>
-                <button class="win-btn">Välj som vinnare</button>
+    // Här skriver vi HTML-koden för matchen
+    låda.innerHTML = `
+            <div class="player">
+                <h4>${namn1}</h4>
+                <p>Skill: ${this.#spelare1.skillLevel ?? 4}</p>
+                <small>"${prat1}"</small>
+                <button class="win-btn">Vinnare</button>
             </div>
             <div class="vs">VS</div>
-            <div class="player p2">
-                <h4>${p2Name}</h4>
-                <p>Skill: ${p2Skill}</p>
-                <small>"${p2Phrase}"</small>
-                <button class="win-btn">Välj som vinnare</button>
+            <div class="player">
+                <h4>${namn2}</h4>
+                <p>Skill: ${this.#spelare2.skillLevel ?? 4}</p>
+                <small>"${prat2}"</small>
+                <button class="win-btn">Vinnare</button>
             </div>
         `;
 
-    // Sparar referensen till elementet så setWinner() kan hitta det sen.
-    this.#element = container;
+    this.#element = låda; // Kom ihåg hur lådan ser ut
 
-    // [Punkt 3.2]: Kopplar knapparna till setWinner-metoden.
-    const buttons = container.querySelectorAll(".win-btn");
-    buttons[0].onclick = () => this.setWinner(this.#player1);
-    buttons[1].onclick = () => this.setWinner(this.#player2);
+    const knappar = låda.querySelectorAll(".win-btn"); // Hitta båda knapparna
+    knappar[0].addEventListener("click", () => {
+      this.setWinner(this.#spelare1); // Kör funktionen för att sätta spelare 1 som vinnare
+    });
 
-    return container;
+    // Vi hämtar den andra knappen (index 1) och gör samma sak för spelare 2
+    knappar[1].addEventListener("click", () => {
+      this.setWinner(this.#spelare2); // Kör funktionen för att sätta spelare 2 som vinnare
+    });
+    return låda; // Skicka tillbaka den färdiga lådan
   }
 
-  // [Punkt 3.2]: Metod för att manuellt sätta en vinnare.
-  setWinner(player) {
-    // Om matchen redan är avgjord ska inget hända.
-    if (this.#isPlayed) return;
+  setWinner(robot) {
+    if (this.#ärSpelad) return; // Om matchen redan är klar, gör inget
 
-    this.#winner = player;
-    this.#isPlayed = true;
+    this.#vinnare = robot; // Sätt roboten som vinnare
+    this.#ärSpelad = true; // Markera matchen som klar
 
-    // [Punkt 2.2]: Markera vinnaren visuellt.
-    // Vi letar upp de två spelar-divarna inuti matchen.
-    const players = this.#element.querySelectorAll(".player");
-
-    // Om spelare 1 vann, lägg till klassen 'loser' på spelare 2, och vice versa.
-    if (player === this.#player1) {
-      players[1].classList.add("loser");
+    const deltagare = this.#element.querySelectorAll(".player"); // Hitta spelar-rutorna
+    if (robot === this.#spelare1) {
+      deltagare[1].classList.add("loser"); // Gör spelare 2 blek om spelare 1 vann
     } else {
-      players[0].classList.add("loser");
+      deltagare[0].classList.add("loser"); // Gör spelare 1 blek om spelare 2 vann
     }
 
-    // Ta bort knapparna så användaren inte kan ändra sig.
-    this.#element.querySelectorAll(".win-btn").forEach((btn) => btn.remove());
-
-    // Skicka ett dolt meddelande (event) till main.js att matchen är klar.
+    this.#element
+      .querySelectorAll(".win-btn")
+      .forEach((knapp) => knapp.remove()); // Ta bort knapparna
     this.#element.dispatchEvent(
       new CustomEvent("matchFinished", { bubbles: true }),
-    );
+    ); // Ropa: "Klar!"
   }
 }
