@@ -1,4 +1,4 @@
-import Match from "./Match.js"; // Importera Match-klassen från match.js
+import { Match } from "./match.js";
 
 const innehåll = document.getElementById("tournament-container"); // Platsen på sidan
 const startaOmKnapp = document.getElementById("restartBtn"); // Starta om-knappen
@@ -63,7 +63,7 @@ innehåll.addEventListener("matchFinished", () => {
 
 function visaVinnare(vinnaren) {
   const låda = document.createElement("div"); // Skapa en guld-ruta
-  låda.className = "champion-box"; // Ge den ett namn
+  låda.className = "champion-box"; // Ger den ett namn
   låda.innerHTML = `<h1>🏆 MÄSTARE: ${vinnaren.name} 🏆</h1>`; // Skriv namnet
   innehåll.appendChild(låda); // Lägg till på sidan
 }

@@ -4,13 +4,6 @@ body {
   padding: 20px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 #tournament-container {
   display: flex;
   flex-direction: column;
