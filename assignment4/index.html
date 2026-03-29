@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spökhusbyrån AB</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Spökhusbyrån AB</h1>
+        <nav>
+          <a href="index.html">Alla spökhus</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h2>Hyr ett hemsökt hus för din nästa semester</h2>
+        <p>Filtrera efter budget, skräcknivå, spöktyp och WiFi.</p>
+      </section>
+
+      <section class="filter-section">
+        <h2>Filtrera hus</h2>
+
+        <form id="filter-form" class="filter-form">
+          <div class="form-group">
+            <label for="max-price">Maxpris per natt</label>
+            <input
+              type="number"
+              id="max-price"
+              min="0"
+              placeholder="t.ex. 1500"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="min-scare"
+              >Lägsta skräcknivå: <span id="scare-label">Mysigt</span></label
+            >
+            <input type="range" id="min-scare" min="1" max="5" value="1" />
+          </div>
+
+          <div class="form-group">
+            <label for="ghost-type">Typ av spöke</label>
+            <select id="ghost-type">
+              <option value="all">Alla typer</option>
+            </select>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="wifi-only" />
+              Endast hus med WiFi
+            </label>
+          </div>
+        </form>
+      </section>
+
+      <div id="error-box"></div>
+      <div id="no-results" class="message hidden">
+        Inga hus matchar din filtrering.
+      </div>
+
+      <section id="houses-container" class="houses-grid"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Spökhusbyrån AB</p>
+      </div>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

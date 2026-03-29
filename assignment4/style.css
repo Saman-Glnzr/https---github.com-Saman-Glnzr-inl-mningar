@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #f4f4f4;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-header,
+.site-footer {
+  background: #1b1b1b;
+  padding: 1rem 0;
+}
+
+.site-header h1,
+.site-footer p {
+  margin: 0;
+}
+
+.site-header .container,
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a,
+.back-link {
+  color: #9ee7ff;
+  text-decoration: none;
+}
+
+nav a:hover,
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.hero,
+.filter-section,
+.weather-section,
+.booking-section,
+.house-card,
+.house-detail-card,
+.message,
+.error-box,
+.success-box {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-form,
+.booking-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.booking-form input,
+.booking-form select,
+.booking-form button {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-size: 1rem;
+}
+
+.checkbox-group {
+  display: block;
+}
+
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.house-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.house-card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.house-detail-card img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card-meta,
+.detail-meta {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #6f42c1;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #5a32a3;
+}
+
+.message {
+  color: #f3e7a0;
+}
+
+.error-box {
+  background: #3a1414;
+  border-color: #a94444;
+  color: #ffd6d6;
+}
+
+.success-box {
+  background: #14301d;
+  border-color: #3d8a59;
+  color: #d8ffe2;
+}
+
+.hidden {
+  display: none;
+}
+
+.extras-fieldset {
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.price-box {
+  background: #222;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.back-link-wrapper {
+  margin: 1rem 0;
+}
+
+@media (max-width: 900px) {
+  .houses-grid {
+    grid-template-columns: 1fr;
+  }
+}
