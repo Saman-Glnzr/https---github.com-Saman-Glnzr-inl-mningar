@@ -4,7 +4,7 @@ import {
   createErrorBox,
   formatPrice,
   getTodayString,
-} from "utils.js";
+} from "./utils.js";
 import { Booking } from "./booking.js";
 
 const houseDetails = document.getElementById("house-details");
